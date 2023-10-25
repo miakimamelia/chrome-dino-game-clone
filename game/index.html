@@ -1,0 +1,225 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No internet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+</body>
+</html>
+<script src="script.js"></script>
+<script src="dino.js"></script>
+    <script>
+
+  const GAME_TYPE = [];
+  let ObstacleType;
+  Runner.spriteDefinitionByType = {
+    original: {
+ 
+      HDPI: {
+        BACKGROUND_EL: {x: 166, y: 2},
+        CACTUS_LARGE: {x: 652, y: 2},
+        CACTUS_SMALL: {x: 446, y: 2},
+        OBSTACLE_2: {x: 652, y: 2},
+        OBSTACLE: {x: 446, y: 2},
+        CLOUD: {x: 166, y: 2},
+        HORIZON: {x: 2, y: 104},
+        MOON: {x: 954, y: 2},
+        PTERODACTYL: {x: 260, y: 2},
+        RESTART: {x: 2, y: 130},
+        TEXT_SPRITE: {x: 1294, y: 2},
+        TREX: {x: 90, y: 10},
+        STAR: {x: 1276, y: 2},
+        COLLECTABLE: {x: 4, y: 4},
+        ALT_GAME_END: {x: 242, y: 4},
+      },
+      MAX_GAP_COEFFICIENT: 1.5,
+      MAX_OBSTACLE_LENGTH: 3,
+      HAS_CLOUDS: 1,
+      BOTTOM_PAD: 10,
+      TREX: {
+        WAITING_1: {x: 44, w: 44, h: 47, xOffset: 0},
+        WAITING_2: {x: 0, w: 44, h: 47, xOffset: 0},
+        RUNNING_1: {x: 88, w: 44, h: 47, xOffset: 0},
+        RUNNING_2: {x: 132, w: 44, h: 47, xOffset: 0},
+        JUMPING: {x: 0, w: 44, h: 47, xOffset: 0},
+        CRASHED: {x: 220, w: 44, h: 47, xOffset: 0},
+        COLLISION_BOXES: [
+          new CollisionBox(22, 0, 17, 16),
+          new CollisionBox(1, 18, 30, 9),
+          new CollisionBox(10, 35, 14, 8),
+          new CollisionBox(1, 24, 29, 5),
+          new CollisionBox(5, 30, 21, 4),
+          new CollisionBox(9, 34, 15, 4),
+        ],
+      },
+      /** @type {Array<ObstacleType>} */
+      OBSTACLES: [
+        {
+          type: 'CACTUS_SMALL',
+          width: 17,
+          height: 35,
+          yPos: 105,
+          multipleSpeed: 4,
+          minGap: 120,
+          minSpeed: 0,
+          collisionBoxes: [
+            new CollisionBox(0, 7, 5, 27),
+            new CollisionBox(4, 0, 6, 34),
+            new CollisionBox(10, 4, 7, 14),
+          ],
+        },
+        {
+          type: 'CACTUS_LARGE',
+          width: 25,
+          height: 50,
+          yPos: 90,
+          multipleSpeed: 7,
+          minGap: 120,
+          minSpeed: 0,
+          collisionBoxes: [
+            new CollisionBox(0, 12, 7, 38),
+            new CollisionBox(8, 0, 7, 49),
+            new CollisionBox(13, 10, 10, 38),
+          ],
+        },
+        {
+          type: 'PTERODACTYL',
+          width: 46,
+          height: 40,
+          yPos: [100, 75, 50],    // Variable height.
+          yPosMobile: [100, 50],  // Variable height mobile.
+          multipleSpeed: 999,
+          minSpeed: 8.5,
+          minGap: 150,
+          collisionBoxes: [
+            new CollisionBox(15, 15, 16, 5),
+            new CollisionBox(18, 21, 24, 6),
+            new CollisionBox(2, 14, 4, 3),
+            new CollisionBox(6, 10, 4, 7),
+            new CollisionBox(10, 8, 6, 9),
+          ],
+          numFrames: 2,
+          frameRate: 1000 / 6,
+          speedOffset: .8,
+        },
+      ],
+      BACKGROUND_EL: {
+        'CLOUD': {
+          HEIGHT: 14,
+          MAX_CLOUD_GAP: 400,
+          MAX_SKY_LEVEL: 30,
+          MIN_CLOUD_GAP: 100,
+          MIN_SKY_LEVEL: 71,
+          OFFSET: 4,
+          WIDTH: 46,
+          X_POS: 1,
+          Y_POS: 120,
+        },
+      },
+      BACKGROUND_EL_CONFIG: {
+        MAX_BG_ELS: 1,
+        MAX_GAP: 400,
+        MIN_GAP: 100,
+        POS: 0,
+        SPEED: 0.5,
+        Y_POS: 125,
+      },
+      LINES: [
+        {SOURCE_X: 2, SOURCE_Y: 52, WIDTH: 600, HEIGHT: 12, YPOS: 127},
+      ],
+    },
+  };
+  </script>
+</head>
+  <body id="t" class="neterror" style="font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 75%" jstcache="0">
+    <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
+      <div id="main-content" jstcache="0">
+        <div class="icon icon-offline" jstcache="0" style="visibility: hidden;"></div>
+        <div id="main-message" jstcache="0">
+
+            
+          <h1>No Internet</h1>
+                  <div>
+                    <p>Try:</p>
+                    <ul>
+                      <li>Entering the portal</li><li>Entering the portal</li><li>Entering the portal</li>
+                    </ul>
+                  </div>
+                  <div class="error-code">ERR_INTERNET_DISCONNECTED</div>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+      
+ 
+        </div>
+      </div>
+      <div id="buttons" class="nav-wrapper suggested-left" jstcache="0">
+        <div id="control-buttons" hidden="" jstcache="0">
+          <button id="reload-button" class="blue-button text-button" onclick="reloadButtonClick(this.url);" jsselect="reloadButton" jsvalues=".url:reloadUrl" jscontent="msg" jstcache="5" style="display: none;"></button>
+          <button id="download-button" class="blue-button text-button" onclick="downloadButtonClick()" jsselect="downloadButton" jscontent="msg" jsvalues=".disabledText:disabledMsg" jstcache="6" style="display: none;">
+          </button>
+        </div>
+        <button id="details-button" class="secondary-button text-button small-link singular" onclick="detailsButtonClick(); toggleHelpBox()" jscontent="details" jsdisplay="(suggestionsDetails &amp;&amp; suggestionsDetails.length > 0) || diagnose" jsvalues=".detailsText:details; .hideDetailsText:hideDetails;" jstcache="2" style="display: none;"></button>
+      </div>
+      <div id="details" class="hidden" jstcache="0">
+        <div class="suggestions" jsselect="suggestionsDetails" jstcache="3" jsinstance="*0" style="display: none;">
+          <div class="suggestion-header" jsvalues=".innerHTML:header" jstcache="7"></div>
+          <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="8"></div>
+        </div>
+      </div>
+    <div role="button" tabindex="0" title="Dino game, play" class="runner-container" jstcache="0"><canvas class="runner-canvas" width="1104" height="300" style="width: 552px; height: 150px;" jstcache="0"></canvas><span class="offline-runner-live-region" aria-live="assertive" jstcache="0">Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles.</span></div><label class="slow-speed-option hidden" jstcache="0">Start slower<input type="checkbox" title="Start slower" tabindex="0" checked="checked" jstcache="0"><span class="slow-speed-toggle" jstcache="0"></span></label><div role="application" tabindex="0" title="Jump!" class="runner-container" style="width: 313px; height: 150px;"><canvas class="runner-canvas" width="313" height="150" style="width: 313px; height: 150px;"></canvas><span class="offline-runner-live-region" aria-live="assertive">Game started.</span></div><label class="slow-speed-option">Start slower<input type="checkbox" title="Start slower" tabindex="0" checked="checked"><span class="slow-speed-toggle"></span></label></div>
+    <div id="sub-frame-error" jstcache="0">
+      <!-- Show details when hovering over the icon, in case the details are
+           hidden because they're too large. -->
+      <div class="icon" jstcache="0"></div>
+      <div id="sub-frame-error-details" jsselect="summary" jsvalues=".innerHTML:msg" jstcache="1">No Internet</div>
+    </div>
+  
+    <div id="offline-resources" jstcache="0">
+      <img id="offline-resources-2x" src="sprite.png"></audio>
+      </template>
+    </div>
+
+    
+<script>
+
+  var loadTimeData;
+  class LoadTimeData{constructor(){this.data_=null}set data(value){expect(!this.data_,"Re-setting data.");this.data_=value}valueExists(id){return id in this.data_}getValue(id){expect(this.data_,"No data. Did you remember to include strings.js?");
+  const value=this.data_[id];expect(typeof value!=="undefined","Could not find value for "+id);return value}getString(id){const value=this.getValue(id);expectIsType(id,value,"string");return value}getStringF(id,var_args){const value=this.getString(id);
+  if(!value){return""}const args=Array.prototype.slice.call(arguments);
+  args[0]=value;
+  return this.substituteString.apply(this,args)}substituteString(label,var_args){const varArgs=arguments;
+  return label.replace(/\$(.|$|\n)/g,(function(m){expect(m.match(/\$[$1-9]/),"Unescaped $ found in localized string.");
+  return m==="$$"?"$":varArgs[m[1]]}))}getBoolean(id){const value=this.getValue(id);expectIsType(id,value,"boolean");
+  return value}getInteger(id){const value=this.getValue(id);expectIsType(id,value,"number");
+  expect(value===Math.floor(value),"Number isn't integer: "+value);
+  return value}overrideValues(replacements){expect(typeof replacements==="object","Replacements must be a dictionary object.");
+  for(const key in replacements){this.data_[key]=replacements[key]}}}function expect(condition,message){if(!condition){throw new Error("Unexpected condition on "+document.location.href+": "+message)}}function expectIsType(id,value,type){expect(typeof value===type,"["+value+"] ("+id+") is not a "+type)}expect(!loadTimeData,"should only include this file once");
+  loadTimeData=new LoadTimeData;window.loadTimeData=loadTimeData;console.warn("crbug/1173575, non-JS module files deprecated.");
+  </script>
+  
+  <script jstcache="0">const pageData = 
+  {"details": "Details",
+  "dinoGameA11yAriaLabel": "Dino game, play",
+  "dinoGameA11yDescription":"Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles.","dinoGameA11yGameOver":"Game over; your score is $1.","dinoGameA11yHighScore":"Your highest score is $1.","dinoGameA11yJump":"Jump!","dinoGameA11ySpeedToggle":"Start slower","dinoGameA11yStartGame":"Game started.","errorCode":"ERR_INTERNET_DISCONNECTED","fontfamily":"'Segoe UI', Tahoma, sans-serif","fontfamilyMd":"'Segoe UI', Tahoma, sans-serif","fontsize":"75%","heading":{"hostName":"www.google.com","msg":"No Internet"},"hideDetails":"Hide details","iconClass":"icon-offline","language":"en","suggestionsDetails":[],"suggestionsSummaryList":[{"summary":"Checking the network cables, modem and router"},{"summary":"Reconnecting to Wi-Fi"},{"summary":"\u003Ca href=\"javascript:diagnoseErrors()\" id=\"diagnose-link\">Running Windows Network Diagnostics\u003C/a>"}],"suggestionsSummaryListHeader":"Try:","summary":{"failedUrl":"https://www.google.com/search?q=google+icon&oq=googl&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIHCAMQABiPAjIHCAQQABiPAjIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDEzMTBqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8","hostName":"www.google.com","msg":"No Internet"},"textdirection":"ltr","title":"www.google.com"};
+  loadTimeData.data = pageData;
+  var tp = document.getElementById('t');
+  jstProcess(new JsEvalContext(pageData), tp);
+  </script>
+

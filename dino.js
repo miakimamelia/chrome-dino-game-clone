@@ -34,12 +34,12 @@ export function getDinoRect() {
 }
 
 export function setDinoLose() {
-  dinoElem.src = "imgs/dino-lose.png"
+  dinoElem.src = "imgs/Dino-run-0.png"
 }
 
 function handleRun(delta, speedScale) {
   if (isJumping) {
-    dinoElem.src = `imgs/dino-stationary.png`
+    dinoElem.src = `imgs/dino-run-1.png`
     return
   }
 
